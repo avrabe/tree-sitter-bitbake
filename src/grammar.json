@@ -369,13 +369,8 @@
           "value": "include"
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[^ \\r\\n]+"
-          },
-          "named": true,
-          "value": "include_path"
+          "type": "SYMBOL",
+          "name": "include_path"
         }
       ]
     },
@@ -394,6 +389,36 @@
           },
           "named": true,
           "value": "include_path"
+        }
+      ]
+    },
+    "include_path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "([a-z0-9A-Z-_/\\.]+)"
+                },
+                "named": true,
+                "value": "include_path_content"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "variable_expansion"
+              }
+            ]
+          }
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\r\\n]+"
         }
       ]
     },

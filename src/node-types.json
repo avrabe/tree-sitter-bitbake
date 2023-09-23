@@ -1745,6 +1745,25 @@
     }
   },
   {
+    "type": "include_path",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "include_path_content",
+          "named": true
+        },
+        {
+          "type": "variable_expansion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "inherit_directive",
     "named": true,
     "fields": {},
@@ -3539,7 +3558,7 @@
     "named": false
   },
   {
-    "type": "include_path",
+    "type": "include_path_content",
     "named": true
   },
   {
